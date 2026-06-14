@@ -44,9 +44,12 @@ public class AppTest {
         BrowserContext uiContext = browser.newContext();
         Page page = uiContext.newPage();
 
-        // Map absolute path to our local HTML asset
-        File htmlFile = new File("src/main/resources/index.html");
-        String localUrl = htmlFile.getAbsolutePath();
+        // get htmlResource
+        java.net.URL htmlResource = getClass().getClassLoader().getResource("index.html");
+        if (htmlResource == null) {
+            throw new RuntimeException("index.html missing from src/main/resources/");
+        }
+        page.navigate(htmlResource.toExternalForm());
 
         // Direct Playwright to mount the disk resource safely via the file:// protocol
         page.navigate("file://" + localUrl);
