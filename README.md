@@ -22,3 +22,23 @@ Ensure you have Java 17 and Maven installed on your machine. If you use Homebrew
 ```bash
 brew install openjdk@17
 brew install maven
+```
+### Expected Output
+```bash
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.241 s -- in AppTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.057 s
+[INFO] Finished at: 2026-06-14T17:05:11-05:00
+[INFO] ------------------------------------------------------------------------
+```
