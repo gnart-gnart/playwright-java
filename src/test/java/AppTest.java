@@ -49,10 +49,8 @@ public class AppTest {
         if (htmlResource == null) {
             throw new RuntimeException("index.html missing from src/main/resources/");
         }
+        // Direct Playwright to mount the disk resource safely
         page.navigate(htmlResource.toExternalForm());
-
-        // Direct Playwright to mount the disk resource safely via the file:// protocol
-        page.navigate("file://" + localUrl);
 
         // UI Assertions
         assertEquals("Enterprise Quality Portal", page.title());
